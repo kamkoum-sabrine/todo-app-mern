@@ -1,4 +1,4 @@
-import { findAll, create, remove, findOne } from '../controllers/todo.controller';
+import { findAll, create, remove, findOne, update } from '../controllers/todo.controller';
 module.exports = (app: any) => {
 
 
@@ -13,6 +13,9 @@ module.exports = (app: any) => {
 
     //Get todo by id
     app.get("/todos/:id", findOne)
+
+    //update todo
+    app.put("/todos/:id", update)
 
 
 }
