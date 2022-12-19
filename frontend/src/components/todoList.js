@@ -21,8 +21,9 @@ export function TodoList() {
                     <p>
                         <input className="InputStyle" placeholder="create a new todo        
                           &#xf0e0; " type="text" />
-                        <button type="submit" className="btnStyle">Add</button>
                     </p >
+                    <button type="submit" className="btnStyle">Add</button>
+
 
                 </div >
 
