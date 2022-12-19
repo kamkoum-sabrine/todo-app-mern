@@ -19,7 +19,6 @@ export const findAll = (req: Request, res: Response) => {
 };
 // create
 export const create = (req: Request, res: Response) => {
-    console.log(req.body);
     const todo = new Todo(req.body);
     todo.save((err, todo) => {
         if (err) res.status(500).send(err)
