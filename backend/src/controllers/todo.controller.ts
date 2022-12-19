@@ -45,4 +45,12 @@ export const remove = (req: Request, res: Response) => {
     )
 };
 
+// find todo by id
+export const findOne = (req: Request, res: Response) => {
+    Todo.findById(req.params.id, (err: Error, todo: any) => {
+        if (err) return res.status(500).send(err);
+        else if (!todo) return res.status(404).send("Todo not found");
+        else return res.status(200).send(todo);
+    })
+};
 
