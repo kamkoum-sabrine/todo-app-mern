@@ -1,11 +1,12 @@
 import mongoose from 'mongoose';
 import app from './config/app.config';
 import { connect } from './config/db.config';
+import router from './routes';
 
 
 connect();
 
-
+app.use('', router);
 app.get('/', (req, res) => {
     res.send('Hello World!');
 });
