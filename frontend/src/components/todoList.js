@@ -1,7 +1,5 @@
-// import logo from '../assets/images/logo-xd-meta.png';
+import { Component } from 'react'
 
-// import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-// import { faSignInAlt } from '@fortawesome/free-solid-svg-icons'
 import React from 'react';
 
 
