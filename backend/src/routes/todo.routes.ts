@@ -1,4 +1,4 @@
-import { findAll, create } from '../controllers/todo.controller';
+import { findAll, create, remove } from '../controllers/todo.controller';
 module.exports = (app: any) => {
 
 
@@ -7,6 +7,9 @@ module.exports = (app: any) => {
 
     // Get all todos
     app.get("/todos", findAll);
+
+    //Delete a todo
+    app.delete("/todos/:id", remove)
 
 
 }

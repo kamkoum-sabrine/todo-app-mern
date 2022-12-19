@@ -20,12 +20,29 @@ export const findAll = (req: Request, res: Response) => {
 // create
 export const create = (req: Request, res: Response) => {
     console.log(req.body);
-    const role = new Todo(req.body);
-    role.save((err, role) => {
+    const todo = new Todo(req.body);
+    todo.save((err, todo) => {
         if (err) res.status(500).send(err)
 
-        else res.send(role)
+        else res.send(todo)
     })
 
 
 };
+
+//delete
+export const remove = (req: Request, res: Response) => {
+    Todo.findById(req.params.id, (err: any, todo: any) => {
+        if (err) return res.status(500).send(err);
+        else if (!todo) return res.status(404).send("Todo not found");
+        else {
+            todo.remove((err: any) => {
+                if (err) return res.status(500).send(err);
+                else return res.status(200).send(todo);
+            });
+        }
+    }
+    )
+};
+
+
