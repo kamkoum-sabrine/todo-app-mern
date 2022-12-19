@@ -1,6 +1,7 @@
 import { Component } from 'react'
 
 import React from 'react';
+import axios from 'axios'
 
 
 export class TodoList extends Component {
@@ -10,6 +11,14 @@ export class TodoList extends Component {
         this.state = {
             todos: []
         }
+    }
+    componentDidMount() {
+
+        axios.get("http://localhost:8080/todos")
+            .then((response) => {
+                console.log(response.data);
+                this.setState({ todos: response.data })
+            })
 
 
 
