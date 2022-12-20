@@ -27,38 +27,32 @@ export class List extends Component {
 
     render() {
         return (
-            <div className='list-todos get-in-touch'>
+            <div className='list-todos get-in-touch table-responsive-md'>
+                <table class="table">
+                    <thead class="black white-text">
+                        <tr>
+                            <th scope="col"  >Status</th>
+                            <th scope="col" >Title</th>
+                            <th scope="col" >Description</th>
+                            <th scope="col" >Priority</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        {this.state.todos.map((item, key) =>
+                            <tr key={key}>
+                                <td><input type="checkbox" /></td>
+                                <td>{item.title}</td>
+                                <td>{item.description}</td>
+                                <td>{item.priority}</td>
+                            </tr>
+                        )}
 
-                <div class="holder d-flex align-items-center justify-content-center">
 
-                    <div class="container">
-                        <header class="text-center mb-5">
-                            <h1 class="display-4">My todos</h1>
-                        </header>
+                    </tbody>
+                </table>
 
-
-                        <div class="row">
-                            <div class="col-lg-5 mx-auto">
-
-                                <div class="card rounded border-0 shadow-sm position-relative">
-                                    <div class="card-body p-5">
-
-                                        {this.state.todos.map((item, key) =>
-
-                                            <div class="form-check mb-3 list" key={key}>
-                                                <input class="form-check-input" id="flexChec2" type="checkbox" />
-
-                                                <label class="form-check-label" for="flexChec2"><span class="fst-italic pl-1">{item.title}</span>
-                                                    <p class="form-check-label" for="flexChec2"><span class="fst-italic pl-1">{item.description}</span></p></label>
-                                            </div>
-                                        )}
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
             </div >
+
         )
     }
 
