@@ -67,6 +67,15 @@ export const getUnfinishedTodo = (req: Request, res: Response) => {
         // });
     })
 }
+export const getfinishedTodo = (req: Request, res: Response) => {
+    Todo.find({ status: 1 }, (err: any, todo: any) => {
+        if (err) return res.status(500).send(err);
+        else if (!todo) return res.status(404).send("Todo not found");
+        // else Todo.findById(req.params.id, (err: any, todo: any) => {
+        return res.status(200).send(todo);
+        // });
+    })
+}
 
 // find todo by id
 export const findOne = (req: Request, res: Response) => {

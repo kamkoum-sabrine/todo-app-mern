@@ -1,4 +1,4 @@
-import { findAll, create, remove, findOne, update, changeTodoStatus, getUnfinishedTodo } from '../controllers/todo.controller';
+import { findAll, create, remove, findOne, update, changeTodoStatus, getUnfinishedTodo, getfinishedTodo } from '../controllers/todo.controller';
 module.exports = (app: any) => {
 
 
@@ -24,5 +24,6 @@ module.exports = (app: any) => {
     //get unfinished todo 
     app.get("/todos/unfinished", getUnfinishedTodo)
 
-
+    //get finished todo 
+    app.get("/todos/finished", getfinishedTodo)
 }
