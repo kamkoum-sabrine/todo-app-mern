@@ -43,7 +43,7 @@ export class TodoList extends Component {
 
 
                         <div className="form-field col-lg-12">
-                            <input className="submit-btn" type="submit" value="Submit" />
+                            <input className="submit-btn" type="submit" value="Add" />
                         </div>
                     </form>
                 </section>
