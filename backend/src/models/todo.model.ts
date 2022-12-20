@@ -5,7 +5,7 @@ let todoSchema = new mongoose.Schema({
     title: { type: String, required: true },
     description: { type: String, required: true },
     priority: { type: Number, required: true }, //1 => HIGH, 2 => MEDIUM, 3 => LOW
-    status: { type: Number, required: true },//0 => INPROGRESS, 1 => DONE
+    status: { type: Number, required: true, default: 0 },//0 => INPROGRESS, 1 => DONE
 });
 
 todoSchema.plugin(mongoosePaginate)
