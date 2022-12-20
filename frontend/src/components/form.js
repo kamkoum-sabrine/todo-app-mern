@@ -11,7 +11,7 @@ export class FormAdd extends Component {
         this.state = {
             title: '',
             description: '',
-            priority: null,
+            priority: '',
             todos: []
         }
         this.changeHandler = this.changeHandler.bind(this)
@@ -75,7 +75,13 @@ export class FormAdd extends Component {
                             <label className="label" for="description">Description</label>
                         </div>
                         <div className="form-field col-lg-6 ">
-                            <input id="priority" className="input-text js-input" type="number" value={priority} name="priority" onChange={this.changeHandler} required />
+                            <select id="priority" className="input-text js-input" value={priority} name="priority"
+                                onChange={this.changeHandler} >
+                                <option value="HIGH">High</option>
+                                <option value="MEDIUM">Medium</option>
+                                <option value="LOW">Low</option>
+                            </select>
+                            {/* <input id="priority" className="input-text js-input" type="number" value={priority} name="priority" onChange={this.changeHandler} required /> */}
                             <label className="label" for="company">Priority</label>
                         </div>
 
@@ -86,22 +92,35 @@ export class FormAdd extends Component {
                     </form>
                 </section>
                 <div className='list-todos get-in-touch table-responsive-md'>
-                    <table class="table" style={{ width: 800 }}>
-                        <thead class="black white-text">
+                    <table className="table" style={{ width: 800 }}>
+                        <thead className="black white-text">
                             <tr>
-                                <th scope="col">Status</th>
+                                <th scope="col"></th>
                                 <th scope="col" >Title</th>
                                 <th scope="col" >Description</th>
                                 <th scope="col" >Priority</th>
+                                <th scope="col">Status</th>
+
                             </tr>
                         </thead>
                         <tbody>
                             {this.state.todos.map((item, key) =>
                                 <tr key={key}>
-                                    <td><input type="checkbox" checked={item.status} /></td>
+                                    <td><input type="checkbox" /></td>
                                     <td>{item.title}</td>
                                     <td>{item.description}</td>
                                     <td>{item.priority}</td>
+                                    {item.status == 0 &&
+                                        <td>
+                                            In progress
+                                        </td>
+                                    }
+                                    {item.status == 1 &&
+                                        <td>
+                                            Done
+                                        </td>
+                                    }
+
                                 </tr>
                             )}
                         </tbody>
