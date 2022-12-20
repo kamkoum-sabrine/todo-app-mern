@@ -40,14 +40,12 @@ export class List extends Component {
                     <tbody>
                         {this.state.todos.map((item, key) =>
                             <tr key={key}>
-                                <td><input type="checkbox" checked={false} /></td>
+                                <td><input type="checkbox" checked={item.status} /></td>
                                 <td>{item.title}</td>
                                 <td>{item.description}</td>
                                 <td>{item.priority}</td>
                             </tr>
                         )}
-
-
                     </tbody>
                 </table>
 
