@@ -141,7 +141,12 @@
      color: #aaa;
  }
 
- input:checked+label {
+ /* input:checked+tr {
+     text-decoration: line-through;
+     color: #adb5bd;
+ } */
+
+ .checked-todo {
      text-decoration: line-through;
      color: #adb5bd;
  }

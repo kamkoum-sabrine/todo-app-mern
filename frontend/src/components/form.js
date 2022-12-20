@@ -12,7 +12,8 @@ export class FormAdd extends Component {
             title: '',
             description: '',
             priority: '',
-            todos: []
+            todos: [],
+            isChecked: false
         }
         this.changeHandler = this.changeHandler.bind(this)
 
@@ -40,6 +41,18 @@ export class FormAdd extends Component {
                 alert("Something happened ! ")
             })
     }
+    handleCheckBox = event => {
+        console.log(event.target.id);
+
+        axios.put("http://localhost:8080/todos/changeStatus/" + event.target.id)
+            .then((response) => {
+                console.log(response.data);
+                this.fetchTodos()
+                this.state.isChecked = true;
+                event.target = true
+                console.log(event)
+            })
+    };
     fetchTodos() {
         axios.get("http://localhost:8080/todos")
             .then((response) => {
@@ -104,19 +117,34 @@ export class FormAdd extends Component {
                             </tr>
                         </thead>
                         <tbody>
+
                             {this.state.todos.map((item, key) =>
                                 <tr key={key}>
-                                    <td><input type="checkbox" /></td>
-                                    <td>{item.title}</td>
-                                    <td>{item.description}</td>
-                                    <td>{item.priority}</td>
+
+                                    <td className={item.status ? 'checked-todo' : "none"} ><input type="checkbox" id={item._id}
+                                        onChange={this.handleCheckBox}
+                                        checked={
+
+                                            item.status
+                                                ? true
+                                                : false
+                                        }
+                                        disabled={
+
+                                            item.status
+                                                ? true
+                                                : false
+                                        } /></td>
+                                    <td className={item.status ? 'checked-todo' : "none"} >{item.title}</td>
+                                    <td className={item.status ? 'checked-todo' : "none"} >{item.description}</td>
+                                    <td className={item.status ? 'checked-todo' : "none"} >{item.priority}</td>
                                     {item.status == 0 &&
-                                        <td>
+                                        <td >
                                             In progress
                                         </td>
                                     }
                                     {item.status == 1 &&
-                                        <td>
+                                        <td className={item.status ? 'checked-todo' : "none"}>
                                             Done
                                         </td>
                                     }
