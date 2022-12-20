@@ -1,77 +1,122 @@
-.get-in-touch {
-    max-width: 800px;
-    margin: 50px auto;
-    position: relative;
+ .get-in-touch {
+     max-width: 800px;
+     margin: 50px auto;
+     position: relative;
 
-}
+ }
 
-.get-in-touch .title {
-    text-align: center;
-    text-transform: uppercase;
-    letter-spacing: 3px;
-    font-size: 3.2em;
-    line-height: 48px;
-    padding-bottom: 48px;
-    color: #5543ca;
-    background: #5543ca;
-    background: -moz-linear-gradient(left, #f4524d 0%, #5543ca 100%) !important;
-    background: -webkit-linear-gradient(left, #f4524d 0%, #5543ca 100%) !important;
-    background: linear-gradient(to right, #f4524d 0%, #5543ca 100%) !important;
-    -webkit-background-clip: text !important;
-    -webkit-text-fill-color: transparent !important;
-}
+ .form-add .get-in-touch .title {
+     text-align: center;
+     text-transform: uppercase;
+     letter-spacing: 3px;
+     font-size: 3.2em;
+     line-height: 48px;
+     padding-bottom: 48px;
+     color: #5543ca;
+     background: #5543ca;
+     background: -moz-linear-gradient(left, #f4524d 0%, #5543ca 100%) !important;
+     background: -webkit-linear-gradient(left, #f4524d 0%, #5543ca 100%) !important;
+     background: linear-gradient(to right, #f4524d 0%, #5543ca 100%) !important;
+     -webkit-background-clip: text !important;
+     -webkit-text-fill-color: transparent !important;
+ }
 
-.contact-form .form-field {
-    position: relative;
-    margin: 32px 0;
-}
+ .form-add .contact-form .form-field {
+     position: relative;
+     margin: 32px 0;
+ }
 
-.contact-form .input-text {
-    display: block;
-    width: 100%;
-    height: 36px;
-    border-width: 0 0 2px 0;
-    border-color: #5543ca;
-    font-size: 18px;
-    line-height: 26px;
-    font-weight: 400;
-}
+ .form-add .contact-form .input-text {
+     display: block;
+     width: 100%;
+     height: 36px;
+     border-width: 0 0 2px 0;
+     border-color: #5543ca;
+     font-size: 18px;
+     line-height: 26px;
+     font-weight: 400;
+ }
 
-.contact-form .input-text:focus {
-    outline: none;
-}
+ .form-add .contact-form .input-text:focus {
+     outline: none;
+ }
 
-.contact-form .input-text:focus+.label,
-.contact-form .input-text.not-empty+.label {
-    -webkit-transform: translateY(-24px);
-    transform: translateY(-24px);
-}
+ .form-add .contact-form .input-text:focus+.label,
+ .form-add .contact-form .input-text.not-empty+.label {
+     -webkit-transform: translateY(-24px);
+     transform: translateY(-24px);
+ }
 
-.contact-form .label {
-    position: absolute;
-    left: 10px;
-    bottom: 25px;
-    font-size: 18px;
-    line-height: 26px;
-    font-weight: 400;
-    color: #5543ca;
-    cursor: text;
-    transition: -webkit-transform .2s ease-in-out;
-    transition: transform .2s ease-in-out;
-    transition: transform .2s ease-in-out,
-        -webkit-transform .2s ease-in-out;
-}
+ .form-add .contact-form .label {
+     position: absolute;
+     left: 10px;
+     bottom: 25px;
+     font-size: 18px;
+     line-height: 26px;
+     font-weight: 400;
+     color: #5543ca;
+     cursor: text;
+     transition: -webkit-transform .2s ease-in-out;
+     transition: transform .2s ease-in-out;
+     transition: transform .2s ease-in-out,
+         -webkit-transform .2s ease-in-out;
+ }
 
-.contact-form .submit-btn {
-    display: inline-block;
-    background-color: #000;
-    background-image: linear-gradient(125deg, #a72879, #064497);
-    color: #fff;
-    text-transform: uppercase;
-    letter-spacing: 2px;
-    font-size: 16px;
-    padding: 8px 16px;
-    border: none;
-    width: 200px;
-    cursor: pointer;
-}
+ .form-add .contact-form .submit-btn {
+     display: inline-block;
+     background-color: #000;
+     background-image: linear-gradient(125deg, #a72879, #064497);
+     color: #fff;
+     text-transform: uppercase;
+     letter-spacing: 2px;
+     font-size: 16px;
+     padding: 8px 16px;
+     border: none;
+     width: 200px;
+     cursor: pointer;
+ }
+
+ /* body {
+    background: #eee;
+} */
+
+ .list-todos .icons i {
+     color: #b5b3b3;
+     border: 1px solid #b5b3b3;
+     padding: 6px;
+     margin-left: 4px;
+     border-radius: 5px;
+     cursor: pointer;
+ }
+
+ .list-todos .activity-done {
+     font-weight: 600;
+ }
+
+ .list-todos .list-group li {
+     margin-bottom: 12px;
+ }
+
+ .list-todos .list-group-item {}
+
+ .list-todos .list li {
+     list-style: none;
+     padding: 10px;
+     border: 1px solid #e3dada;
+     margin-top: 12px;
+     border-radius: 5px;
+     background: #fff;
+ }
+
+ .list-todos .checkicon {
+     color: green;
+     font-size: 19px;
+ }
+
+ .list-todos .date-time {
+     font-size: 12px;
+ }
+
+ .list-todos .profile-image img {
+     margin-left: 3px;
+ }

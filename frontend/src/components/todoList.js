@@ -24,8 +24,8 @@ export class TodoList extends Component {
 
     render() {
         return (
-            <div>
-                <section className="get-in-touch">
+            <div className='form-add'>
+                <section className=" get-in-touch">
                     <h1 className="title">Todo Application</h1>
                     <form className="contact-form row">
                         <div className="form-field col-lg-6">
