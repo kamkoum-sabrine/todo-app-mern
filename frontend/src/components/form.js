@@ -90,6 +90,7 @@ export class FormAdd extends Component {
                         <div className="form-field col-lg-6 ">
                             <select id="priority" className="input-text js-input" value={priority} name="priority"
                                 onChange={this.changeHandler} >
+                                <option value="" selected disabled hidden></option>
                                 <option value="HIGH">High</option>
                                 <option value="MEDIUM">Medium</option>
                                 <option value="LOW">Low</option>
@@ -124,7 +125,6 @@ export class FormAdd extends Component {
                                     <td className={item.status ? 'checked-todo' : "none"} ><input type="checkbox" id={item._id}
                                         onChange={this.handleCheckBox}
                                         checked={
-
                                             item.status
                                                 ? true
                                                 : false
