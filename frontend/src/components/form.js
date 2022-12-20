@@ -82,6 +82,29 @@ export class FormAdd extends Component {
 
             })
     }
+    getFinishedTodos = () => {
+        axios.get("http://localhost:8080/todos/finished")
+            .then((response) => {
+                console.log(response.data);
+                console.log(this.state.todos)
+                this.setState({ todos: response.data })
+                console.log(this.state.todos)
+
+            })
+    }
+    deleteTodo = (id) => {
+        console.log(id)
+        axios.delete("http://localhost:8080/todos/" + id)
+            .then((response) => {
+                this.fetchTodos()
+                // console.log(response.data);
+                // console.log(this.state.todos)
+                // this.setState({ todos: response.data })
+                // console.log(this.state.todos)
+
+            })
+
+    }
     render() {
         const { title, description, priority } = this.state
 
@@ -133,6 +156,9 @@ export class FormAdd extends Component {
                     }>
                         <button className="submit-btn" type="submit" onClick={this.fetchTodos} >Get all todos</button>
                     </div>
+                    <div className="form-field col-lg-12" >
+                        <button className="submit-btn" type="submit" onClick={this.getFinishedTodos} >Get finished todos</button>
+                    </div>
 
                     <table className="table" style={{ width: 800 }}>
                         <thead className="black white-text">
@@ -142,6 +168,7 @@ export class FormAdd extends Component {
                                 <th scope="col" >Description</th>
                                 <th scope="col" >Priority</th>
                                 <th scope="col">Status</th>
+                                <th scope="col">Action</th>
 
                             </tr>
                         </thead>
@@ -176,6 +203,9 @@ export class FormAdd extends Component {
                                             Done
                                         </td>
                                     }
+                                    <td>
+                                        <button className='btn btn-primary' onClick={(e) => this.deleteTodo(item._id, e)}>Delete</button>
+                                    </td>
 
                                 </tr>
                             )}
