@@ -28,10 +28,10 @@ export class List extends Component {
     render() {
         return (
             <div className='list-todos get-in-touch table-responsive-md'>
-                <table class="table">
+                <table class="table" style={{ width: 800 }}>
                     <thead class="black white-text">
                         <tr>
-                            <th scope="col"  >Status</th>
+                            <th scope="col">Status</th>
                             <th scope="col" >Title</th>
                             <th scope="col" >Description</th>
                             <th scope="col" >Priority</th>
@@ -40,7 +40,7 @@ export class List extends Component {
                     <tbody>
                         {this.state.todos.map((item, key) =>
                             <tr key={key}>
-                                <td><input type="checkbox" /></td>
+                                <td><input type="checkbox" checked={false} /></td>
                                 <td>{item.title}</td>
                                 <td>{item.description}</td>
                                 <td>{item.priority}</td>

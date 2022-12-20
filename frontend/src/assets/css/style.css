@@ -78,9 +78,11 @@
  }
 
 
- body {
+ /* body {
      background: #eee;
- }
+ } */
+
+
 
  .list-todos .icons i {
      color: #b5b3b3;
