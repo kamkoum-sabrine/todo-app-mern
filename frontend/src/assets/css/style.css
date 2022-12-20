@@ -24,6 +24,7 @@
  .form-add .contact-form .form-field {
      position: relative;
      margin: 32px 0;
+     color: #eee;
  }
 
  .form-add .contact-form .input-text {
@@ -66,7 +67,7 @@
      display: inline-block;
      background-color: #000;
      background-image: linear-gradient(125deg, #a72879, #064497);
-     color: #fff;
+     color: #eee;
      text-transform: uppercase;
      letter-spacing: 2px;
      font-size: 16px;
@@ -76,9 +77,10 @@
      cursor: pointer;
  }
 
- /* body {
-    background: #eee;
-} */
+
+ body {
+     background: #eee;
+ }
 
  .list-todos .icons i {
      color: #b5b3b3;
@@ -99,7 +101,7 @@
 
  .list-todos .list-group-item {}
 
- .list-todos .list li {
+ .list {
      list-style: none;
      padding: 10px;
      border: 1px solid #e3dada;
@@ -119,4 +121,38 @@
 
  .list-todos .profile-image img {
      margin-left: 3px;
+ }
+
+ /* ==========================================
+    FOR DEMO PURPOSE
+  ========================================== */
+ .holder {
+     background: #f0efe9;
+     min-height: 100vh;
+ }
+
+ .rounded {
+     border-radius: 1rem !important;
+ }
+
+ .text-gray {
+     color: #aaa;
+ }
+
+ input:checked+label {
+     text-decoration: line-through;
+     color: #adb5bd;
+ }
+
+ input:checked+p {
+     text-decoration: line-through;
+     color: #adb5bd;
+ }
+
+ label {
+     cursor: pointer;
+ }
+
+ a {
+     text-decoration: none;
  }
