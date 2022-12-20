@@ -7,7 +7,7 @@ import { TodoList } from './components/todoList'
 
 function App() {
   return (
-    <div className="App bg text-center centered">
+    <div className="App ">
 
       <TodoList />
     </div>

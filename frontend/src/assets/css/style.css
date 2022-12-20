@@ -1,84 +1,77 @@
-.bg {
+.get-in-touch {
+    max-width: 800px;
+    margin: 50px auto;
+    position: relative;
+
+}
+
+.get-in-touch .title {
+    text-align: center;
+    text-transform: uppercase;
+    letter-spacing: 3px;
+    font-size: 3.2em;
+    line-height: 48px;
+    padding-bottom: 48px;
+    color: #5543ca;
+    background: #5543ca;
+    background: -moz-linear-gradient(left, #f4524d 0%, #5543ca 100%) !important;
+    background: -webkit-linear-gradient(left, #f4524d 0%, #5543ca 100%) !important;
+    background: linear-gradient(to right, #f4524d 0%, #5543ca 100%) !important;
+    -webkit-background-clip: text !important;
+    -webkit-text-fill-color: transparent !important;
+}
+
+.contact-form .form-field {
+    position: relative;
+    margin: 32px 0;
+}
+
+.contact-form .input-text {
+    display: block;
     width: 100%;
-    height: auto;
-    min-height: 100vh;
-    background-image: url(http://i.imgur.com/w16HASj.png);
-    background-size: 100% 100%;
-    background-position: top center;
+    height: 36px;
+    border-width: 0 0 2px 0;
+    border-color: #5543ca;
+    font-size: 18px;
+    line-height: 26px;
+    font-weight: 400;
 }
 
-.content {
-    margin-top: 20%;
+.contact-form .input-text:focus {
+    outline: none;
 }
 
-.centered {
+.contact-form .input-text:focus+.label,
+.contact-form .input-text.not-empty+.label {
+    -webkit-transform: translateY(-24px);
+    transform: translateY(-24px);
+}
+
+.contact-form .label {
     position: absolute;
-    top: 40%;
-    left: 50%;
-    transform: translate(-50%, -50%);
+    left: 20px;
+    bottom: 11px;
+    font-size: 18px;
+    line-height: 26px;
+    font-weight: 400;
+    color: #5543ca;
+    cursor: text;
+    transition: -webkit-transform .2s ease-in-out;
+    transition: transform .2s ease-in-out;
+    transition: transform .2s ease-in-out,
+        -webkit-transform .2s ease-in-out;
 }
 
-.InputStyle {
-    border-radius: 25px;
-    border: solid 1px white;
-    background: transparent;
-    width: 300px;
-    padding: 10px 20px;
-}
-
-.btnStyle {
-    border-radius: 25px;
-    border: solid 1px white;
-    background: transparent;
-    width: 100px;
-    padding: 10px 20px;
-    color: white;
-}
-
-
-input,
-input::-webkit-input-placeholder {
-    font-size: 12px;
-    color: white;
-}
-
-.social-btn {
-    position: absolute;
-    bottom: 20px;
-    left: 47%;
-}
-
-i {
-    padding: 5px;
-    color: white;
-
-}
-
-input,
-input:focus {
-    border: solid 1px white;
-    outline: 0;
-    -webkit-appearance: none;
-    box-shadow: nones;
-    -moz-box-shadow: none;
-    -webkit-box-shadow: none;
-}
-
-.secondLine {
-    font-weight: 350;
-    font-size: 15px;
-    margin-bottom: 15%;
-    color: white;
-
-}
-
-.firstLine {
-    font-size: 30px;
-    color: white;
-}
-
-@media only screen and (max-width: 600px) {
-    .firstLine {
-        font-size: 20px;
-    }
+.contact-form .submit-btn {
+    display: inline-block;
+    background-color: #000;
+    background-image: linear-gradient(125deg, #a72879, #064497);
+    color: #fff;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    font-size: 16px;
+    padding: 8px 16px;
+    border: none;
+    width: 200px;
+    cursor: pointer;
 }
