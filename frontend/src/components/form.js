@@ -13,7 +13,8 @@ export class FormAdd extends Component {
             description: '',
             priority: '',
             todos: [],
-            isChecked: false
+            isChecked: false,
+            showUnfinished: false
         }
         this.changeHandler = this.changeHandler.bind(this)
 
@@ -53,11 +54,12 @@ export class FormAdd extends Component {
                 console.log(event)
             })
     };
-    fetchTodos() {
+    fetchTodos = () => {
         axios.get("http://localhost:8080/todos")
             .then((response) => {
                 console.log(response.data);
-                this.setState({ todos: response.data })
+                console.log(this.state.todos)
+                this.setState({ todos: response.data, showUnfinished: false })
                 console.log(this.state.todos)
             })
     }
@@ -69,6 +71,16 @@ export class FormAdd extends Component {
 
         this.setState({ [e.target.name]: e.target.value })
 
+    }
+    getUnfinishedTodos = () => {
+        axios.get("http://localhost:8080/todos/unfinished")
+            .then((response) => {
+                console.log(response.data);
+                console.log(this.state.todos)
+                this.setState({ todos: response.data, showUnfinished: true })
+                console.log(this.state.todos)
+
+            })
     }
     render() {
         const { title, description, priority } = this.state
@@ -105,7 +117,23 @@ export class FormAdd extends Component {
                         </div>
                     </form>
                 </section>
+
                 <div className='list-todos get-in-touch table-responsive-md'>
+                    <div className="form-field col-lg-12" hidden={
+                        this.state.showUnfinished
+                            ? true
+                            : false
+                    }>
+                        <button className="submit-btn" type="submit" onClick={this.getUnfinishedTodos} >Get unfinished todos</button>
+                    </div>
+                    <div className="form-field col-lg-12" hidden={
+                        this.state.showUnfinished
+                            ? false
+                            : true
+                    }>
+                        <button className="submit-btn" type="submit" onClick={this.fetchTodos} >Get all todos</button>
+                    </div>
+
                     <table className="table" style={{ width: 800 }}>
                         <thead className="black white-text">
                             <tr>

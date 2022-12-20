@@ -63,7 +63,7 @@
          -webkit-transform .2s ease-in-out;
  }
 
- .form-add .contact-form .submit-btn {
+ .submit-btn {
      display: inline-block;
      background-color: #000;
      background-image: linear-gradient(125deg, #a72879, #064497);
