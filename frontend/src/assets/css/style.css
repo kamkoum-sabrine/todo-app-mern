@@ -74,6 +74,25 @@
      padding: 8px 16px;
      border: none;
      width: 200px;
+     float: right;
+
+     cursor: pointer;
+ }
+
+ .filter {
+     display: inline-block;
+     background-color: #000;
+     background-image: green;
+     color: #eee;
+     text-transform: uppercase;
+     letter-spacing: 2px;
+     font-size: 16px;
+     padding: 20%;
+     margin: 2%;
+     border: none;
+     width: 200px;
+     float: right;
+
      cursor: pointer;
  }
 
