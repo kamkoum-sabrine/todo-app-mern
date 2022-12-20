@@ -11,7 +11,7 @@ function App() {
     <div className=" ">
 
       <FormAdd />
-      <List />
+      {/* <List /> */}
     </div>
   );
 }

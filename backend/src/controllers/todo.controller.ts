@@ -8,12 +8,16 @@ export const findAll = (req: Request, res: Response) => {
     const page: number = parseInt(req.query.page?.toString() || '1');
     const size: number = parseInt(req.query.size?.toString() || '5');
 
-    Todo.paginate({
-        message: { $regex: ".*(?i)" + search + ".*" },
-        subject: { $regex: ".*(?i)" + search + ".*" }
-    }, { page: page, limit: size }, (err: any, role: any) => {
+    // Todo.paginate({
+    //     message: { $regex: ".*(?i)" + search + ".*" },
+    //     subject: { $regex: ".*(?i)" + search + ".*" }
+    // }, { page: page, limit: size }, (err: any, role: any) => {
+    //     if (err) res.status(500).send(err);
+    //     else res.send(role);
+    // });
+    Todo.find({}, (err: any, todo: any) => {
         if (err) res.status(500).send(err);
-        else res.send(role);
+        else res.send(todo);
     });
 
 };
