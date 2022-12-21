@@ -102,22 +102,22 @@ export class TodoList extends Component {
                     <form className="contact-form row " onSubmit={this.submitHandler}>
                         <div className="form-field col-lg-4">
                             <input id="title" className="input-text js-input" type="text" required value={title} name="title" onChange={this.changeHandler} />
-                            <label className="label" for="title">Title</label>
+                            <label className="label" >Title</label>
                         </div>
                         <br />
                         <div className="form-field col-lg-4 ">
                             <input id="description" className="input-text js-input" type="text" value={description} name="description" onChange={this.changeHandler} required />
-                            <label className="label" for="description">Description</label>
+                            <label className="label" >Description</label>
                         </div>
                         <div className="form-field col-lg-4 ">
                             <select id="priority" className="input-text js-input" value={priority} name="priority"
                                 onChange={this.changeHandler} required >
-                                <option value="" selected disabled hidden></option>
+                                <option value="" defaultValue disabled hidden></option>
                                 <option value="HIGH">High</option>
                                 <option value="MEDIUM">Medium</option>
                                 <option value="LOW">Low</option>
                             </select>
-                            <label className="label" for="company">Priority</label>
+                            <label className="label" >Priority</label>
                         </div>
 
 
@@ -130,14 +130,14 @@ export class TodoList extends Component {
                 <div className='list-todos get-in-touch table-responsive-md'>
 
 
-                    <div class="  pull-right float-right">
-                        <button class="btn btn-small btn-dark submit-btn filter" onClick={this.getUnfinishedTodos} data-toggle="portfilter" >
+                    <div className="  pull-right float-right">
+                        <button className="btn btn-small btn-dark submit-btn filter" onClick={this.getUnfinishedTodos} data-toggle="portfilter" >
                             Unfinished
                         </button>
-                        <button class="btn btn-small btn-dark submit-btn filter" onClick={this.getFinishedTodos} data-toggle="portfilter" >
+                        <button className="btn btn-small btn-dark submit-btn filter" onClick={this.getFinishedTodos} data-toggle="portfilter" >
                             Finished
                         </button>
-                        <button class="btn btn-small btn-dark submit-btn filter" onClick={this.fetchTodos} data-toggle="portfilter" >
+                        <button className="btn btn-small btn-dark submit-btn filter" onClick={this.fetchTodos} data-toggle="portfilter" >
                             All
                         </button>
 
