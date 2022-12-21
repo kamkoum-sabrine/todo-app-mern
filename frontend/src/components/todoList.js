@@ -4,11 +4,11 @@ import React from 'react';
 import axios from 'axios';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 
-import { faCheckCircle, faTrash, faXmark, faXmarkCircle } from '@fortawesome/free-solid-svg-icons'
+import { faCheckCircle, faTrash, faXmarkCircle } from '@fortawesome/free-solid-svg-icons'
 
 
 
-export class FormAdd extends Component {
+export class TodoList extends Component {
 
     constructor(props) {
         super(props);
@@ -35,7 +35,6 @@ export class FormAdd extends Component {
             priority: this.state.priority,
         }
 
-        console.log(this.state)
         axios.post("http://localhost:8080/todos", todo)
             .then(response => {
 
@@ -43,28 +42,22 @@ export class FormAdd extends Component {
                 this.fetchTodos()
             })
             .catch(err => {
-                alert("Something happened ! ")
+                alert("Error ! Try again ")
             })
     }
     handleCheckBox = event => {
-        console.log(event.target.id);
 
         axios.put("http://localhost:8080/todos/changeStatus/" + event.target.id)
             .then((response) => {
-                console.log(response.data);
                 this.fetchTodos()
                 this.state.isChecked = true;
                 event.target = true
-                console.log(event)
             })
     };
     fetchTodos = () => {
         axios.get("http://localhost:8080/todos")
             .then((response) => {
-                console.log(response.data);
-                console.log(this.state.todos)
                 this.setState({ todos: response.data, showUnfinished: false })
-                console.log(this.state.todos)
             })
     }
     componentDidMount() {
@@ -79,34 +72,20 @@ export class FormAdd extends Component {
     getUnfinishedTodos = () => {
         axios.get("http://localhost:8080/todos/unfinished")
             .then((response) => {
-                console.log(response.data);
-                console.log(this.state.todos)
                 this.setState({ todos: response.data, showUnfinished: true })
-                console.log(this.state.todos)
-
             })
     }
     getFinishedTodos = () => {
         axios.get("http://localhost:8080/todos/finished")
             .then((response) => {
-                console.log(response.data);
-                console.log(this.state.todos)
                 this.setState({ todos: response.data })
-                console.log(this.state.todos)
-
             })
     }
     deleteTodo = (id) => {
         if (window.confirm("Are you sure you want to delete this todo ?")) {
-            console.log(id)
             axios.delete("http://localhost:8080/todos/" + id)
-                .then((response) => {
+                .then(() => {
                     this.fetchTodos()
-                    // console.log(response.data);
-                    // console.log(this.state.todos)
-                    // this.setState({ todos: response.data })
-                    // console.log(this.state.todos)
-
                 })
         }
 
@@ -152,13 +131,13 @@ export class FormAdd extends Component {
 
 
                     <div class="  pull-right float-right">
-                        <button class="btn btn-small btn-success submit-btn filter" onClick={this.getUnfinishedTodos} data-toggle="portfilter" >
+                        <button class="btn btn-small btn-dark submit-btn filter" onClick={this.getUnfinishedTodos} data-toggle="portfilter" >
                             Unfinished
                         </button>
-                        <button class="btn btn-small btn-success submit-btn filter" onClick={this.getFinishedTodos} data-toggle="portfilter" >
+                        <button class="btn btn-small btn-dark submit-btn filter" onClick={this.getFinishedTodos} data-toggle="portfilter" >
                             Finished
                         </button>
-                        <button class="btn btn-small btn-success submit-btn filter" onClick={this.fetchTodos} data-toggle="portfilter" >
+                        <button class="btn btn-small btn-dark submit-btn filter" onClick={this.fetchTodos} data-toggle="portfilter" >
                             All
                         </button>
 
@@ -209,14 +188,11 @@ export class FormAdd extends Component {
                                     {item.status == 0 &&
                                         <td >
                                             <FontAwesomeIcon icon={faXmarkCircle} color="red" />
-
-                                            {/* Unfinished */}
                                         </td>
                                     }
                                     {item.status == 1 &&
                                         <td className={item.status ? 'checked-todo' : "none"}>
                                             <FontAwesomeIcon icon={faCheckCircle} color="green" />
-                                            {/* Finished */}
                                         </td>
                                     }
                                     <td>

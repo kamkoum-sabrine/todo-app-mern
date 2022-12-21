@@ -120,65 +120,8 @@
      margin-bottom: 12px;
  }
 
- .list-todos .list-group-item {}
-
- .list {
-     list-style: none;
-     padding: 10px;
-     border: 1px solid #e3dada;
-     margin-top: 12px;
-     border-radius: 5px;
-     background: #fff;
- }
-
- .list-todos .checkicon {
-     color: green;
-     font-size: 19px;
- }
-
- .list-todos .date-time {
-     font-size: 12px;
- }
-
- .list-todos .profile-image img {
-     margin-left: 3px;
- }
-
- /* ==========================================
-    FOR DEMO PURPOSE
-  ========================================== */
- .holder {
-     background: #f0efe9;
-     min-height: 100vh;
- }
-
- .rounded {
-     border-radius: 1rem !important;
- }
-
- .text-gray {
-     color: #aaa;
- }
-
- /* input:checked+tr {
-     text-decoration: line-through;
-     color: #adb5bd;
- } */
 
  .checked-todo {
      text-decoration: line-through;
      color: #adb5bd;
- }
-
- input:checked+p {
-     text-decoration: line-through;
-     color: #adb5bd;
- }
-
- label {
-     cursor: pointer;
- }
-
- a {
-     text-decoration: none;
  }

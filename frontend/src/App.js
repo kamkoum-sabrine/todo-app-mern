@@ -1,17 +1,13 @@
-import logo from './logo.svg';
 
 import './App.css';
 import './assets/css/style.css'
-import { FormAdd } from './components/form'
-import { List } from './components/list';
+import { TodoList } from './components/todoList';
 
 
 function App() {
   return (
-    <div className=" ">
-
-      <FormAdd />
-      {/* <List /> */}
+    <div>
+      <TodoList />
     </div>
   );
 }
