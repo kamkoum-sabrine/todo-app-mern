@@ -138,7 +138,6 @@ export class FormAdd extends Component {
                                 <option value="MEDIUM">Medium</option>
                                 <option value="LOW">Low</option>
                             </select>
-                            {/* <input id="priority" className="input-text js-input" type="number" value={priority} name="priority" onChange={this.changeHandler} required /> */}
                             <label className="label" for="company">Priority</label>
                         </div>
 
@@ -151,37 +150,19 @@ export class FormAdd extends Component {
 
                 <div className='list-todos get-in-touch table-responsive-md'>
 
-                    {/* <div className="form-field col-lg-12" hidden={
-                        this.state.showUnfinished
-                            ? true
-                            : false
-                    }>
-                        <button className="submit-btn" type="submit" onClick={this.getUnfinishedTodos} >Get unfinished todos</button>
-                    </div> */}
+
                     <div class="  pull-right float-right">
-                        <button class="btn btn-small btn-success filter" data-toggle="portfilter" data-target="all">
+                        <button class="btn btn-small btn-success submit-btn filter" onClick={this.getUnfinishedTodos} data-toggle="portfilter" >
+                            Unfinished
+                        </button>
+                        <button class="btn btn-small btn-success submit-btn filter" onClick={this.getFinishedTodos} data-toggle="portfilter" >
+                            Finished
+                        </button>
+                        <button class="btn btn-small btn-success submit-btn filter" onClick={this.fetchTodos} data-toggle="portfilter" >
                             All
-                        </button>
-                        <button class="btn btn-small btn-success filter" data-toggle="portfilter" data-target="art">
-                            Art
-                        </button>
-                        <button class="btn btn-small btn-success filter" data-toggle="portfilter" data-target="media">
-                            Media
                         </button>
 
                     </div>
-
-                    {/* <div className="form-field col-lg-12" hidden={
-                        this.state.showUnfinished
-                            ? false
-                            : true
-                    }> */}
-                    {/* <button className="submit-btn" type="submit" onClick={this.fetchTodos} >Get all todos</button>
-                </div> */}
-                    {/* <div className="form-field col-lg-12" >
-                        <button className="submit-btn" type="submit" onClick={this.getFinishedTodos} >Get finished todos</button>
-                    </div> */}
-
 
                     <table className="table" style={{ width: 800 }}>
                         <thead className="black white-text">
