@@ -82,7 +82,6 @@
  .filter {
      display: inline-block;
      background-color: #000;
-     background-image: green;
      color: #eee;
      text-transform: uppercase;
      letter-spacing: 2px;
