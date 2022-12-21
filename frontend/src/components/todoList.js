@@ -96,7 +96,7 @@ export class TodoList extends Component {
 
         return (
             <div className='form-add'>
-                <section className=" get-in-touch">
+                <section className=" form-add">
                     <h1 className="title">Todo Application</h1>
 
                     <form className="contact-form row " onSubmit={this.submitHandler}>
