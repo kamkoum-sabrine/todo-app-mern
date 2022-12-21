@@ -175,22 +175,22 @@ export class TodoList extends Component {
                                         } /></td>
                                     <td className={item.status ? 'checked-todo' : "none"} >{item.title}</td>
                                     <td className={item.status ? 'checked-todo' : "none"} >{item.description}</td>
-                                    {item.priority == 'HIGH' &&
+                                    {item.priority === 'HIGH' &&
                                         <td className={item.status ? 'checked-todo' : "none"} style={{ color: 'red' }}
                                         >{item.priority}</td>}
-                                    {item.priority == 'MEDIUM' &&
+                                    {item.priority === 'MEDIUM' &&
                                         <td className={item.status ? 'checked-todo' : "none"} style={{ color: 'orange' }}
                                         >{item.priority}</td>}
-                                    {item.priority == 'LOW' &&
+                                    {item.priority === 'LOW' &&
                                         <td className={item.status ? 'checked-todo' : "none"} style={{ color: 'yellow' }}
                                         >{item.priority}</td>}
 
-                                    {item.status == 0 &&
+                                    {item.status === 0 &&
                                         <td >
                                             <FontAwesomeIcon icon={faXmarkCircle} color="red" />
                                         </td>
                                     }
-                                    {item.status == 1 &&
+                                    {item.status === 1 &&
                                         <td className={item.status ? 'checked-todo' : "none"}>
                                             <FontAwesomeIcon icon={faCheckCircle} color="green" />
                                         </td>
